@@ -22,7 +22,7 @@ public:
             std::cout << "[" << edges[i].nodeStart << " -> " << edges[i].nodeEnd << "] = " << edges[i].weight << std::endl;
         }
     }
-    //Метод перечисления вершин, смежних с вершиной A
+    //Метод перечисления вершин, смежных с вершиной A
     void printConnectedToA(int a)
     {
         std::vector<int> connectedFrom;
