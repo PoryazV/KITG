@@ -51,7 +51,7 @@ public:
         }
         return true;
     }
-    //Получение ссылки на необходимый узел
+    //Метод получения ссылки на необходимый узел
     Node* find(int data)
     {
         if(rootNode == nullptr)
