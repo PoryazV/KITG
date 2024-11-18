@@ -108,47 +108,6 @@ public:
         }
         return node->data;
     }
-    //Метод получения высоты дерева
-    int height()
-    {
-        if(rootNode == nullptr)
-        {
-            return 0;
-        }
-        int data = min();
-        Node* node = root();
-        int count1 = 0, count2 = 0, count = 2;
-        for(int i = 0; i <= 1; i++)
-        {
-            while(data!=node->data)
-            {
-                count++;
-                if(data<node->data)
-                {
-                    if(node->left == nullptr)
-                    {
-                        continue;
-                    }
-                    node = node->left;
-                }
-                else if(data>node->data)
-                {
-                    if(node->right == nullptr)
-                    {
-                        continue;
-                    }
-                    node = node->right;
-                }
-            }
-            count1 = count2;
-            count2 = count;
-            count = 2;
-            int data = max();
-            node = root();
-        }
-        if(count1>=count2){return count1;}
-        else{return count2;}
-    }
     //Метод добавления узла
     void add(int data)
     {
@@ -278,9 +237,8 @@ int main()
     tree.add(14);
     tree.add(13);
     tree.add(7);
-    //Проверяем корневой узел, высоту, минимальное и максимальные значения, наличие узла 6 и 9.
+    //Проверяем корневой узел, минимальное и максимальные значения, наличие узла 6 и 9.
     std::cout << tree.root()->data << std::endl;
-    std::cout << tree.height() << std::endl;
     std::cout << tree.min() << " " << tree.max() << std::endl;
     std::cout << tree.has(6) << " " << tree.has(9) << std::endl;
     //Проверяем правильнось нахождения узла: значение самого узла, значение левого от него узла , значение правого от него узла
@@ -292,7 +250,6 @@ int main()
     tree.remove(3);
     tree.remove(1);
     tree.remove(8);
-    //Проверяем корневой узел, высота должна уменьшиться на 1
+    //Проверяем корневой узел
     std::cout << tree.root()->data << " " << tree.find(tree.root()->data)->left->data << " " << tree.find(tree.root()->data)->right->data << std::endl;
-    std::cout << tree.height() << std::endl;
 }
