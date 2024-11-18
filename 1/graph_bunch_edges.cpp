@@ -31,7 +31,7 @@ public:
             int link = heads[i];
             while (link != -1)
             {
-                std::cout << "[" << edges[link].nodeStart << " -> " << edges[link].nodeEnd << "] = " << edges[link].weight << " | " << links[link] << std::endl;
+                std::cout << link << " [" << edges[link].nodeStart << " -> " << edges[link].nodeEnd << "] = " << edges[link].weight << " | " << links[link] << std::endl;
                 link = links[link];
             }
         }
