@@ -26,9 +26,14 @@ public:
             if(i+1 < heads.size()){std::cout << ", ";}
         }
         std::cout << "]" << std::endl;
-        for(int i = 0; i < edges.size(); i++)
+        for(int i = 0; i < heads.size(); i++)
         {
-            std::cout << "[" << edges[i].nodeStart << " -> " << edges[i].nodeEnd << "] = " << edges[i].weight << " | " << links[i] << std::endl;
+            int link = heads[i];
+            while (link != -1)
+            {
+                std::cout << "[" << edges[link].nodeStart << " -> " << edges[link].nodeEnd << "] = " << edges[link].weight << " | " << links[link] << std::endl;
+                link = links[link];
+            }
         }
     }
     //Метод перечисления вершин, смежных с вершиной A
