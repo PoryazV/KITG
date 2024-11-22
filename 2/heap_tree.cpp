@@ -238,12 +238,12 @@ int main()
     tree.add(13);
     tree.add(7);
     //Проверяем корневой узел, минимальное и максимальные значения, наличие узла 6 и 9.
-    std::cout << tree.root()->data << std::endl;
-    std::cout << tree.min() << " " << tree.max() << std::endl;
-    std::cout << tree.has(6) << " " << tree.has(9) << std::endl;
+    std::cout << "Root node: " << tree.root()->data << std::endl;
+    std::cout << "Min node: " << tree.min() << "; Max node: " << tree.max() << std::endl;
+    std::cout << "Has 6: " << tree.has(6) << "; Has 9: " << tree.has(9) << std::endl;
     //Проверяем правильнось нахождения узла: значение самого узла, значение левого от него узла , значение правого от него узла
-    std::cout << tree.find(6)->data << " " << tree.find(6)->left->data << " " << tree.find(6)->right->data << std::endl;
-    std::cout << "---" << std::endl;
+    std::cout << "Trying to find 6:\nFound node: " << tree.find(6)->data << "; Left from found node: " << tree.find(6)->left->data << "; Right from found node: " << tree.find(6)->right->data << std::endl;
+    std::cout << "Removing nodes: 7, 14, 3, 1, 8" << std::endl;
     //Проверяем все ситуации удаления, включая удаление корневого узла
     tree.remove(7);
     tree.remove(14);
@@ -251,5 +251,5 @@ int main()
     tree.remove(1);
     tree.remove(8);
     //Проверяем корневой узел
-    std::cout << tree.root()->data << " " << tree.find(tree.root()->data)->left->data << " " << tree.find(tree.root()->data)->right->data << std::endl;
+    std::cout << "New root node: " << tree.root()->data << "; Left from new root node: " << tree.root()->left->data << "; Right from new root node: " << tree.root()->right->data << std::endl;
 }
